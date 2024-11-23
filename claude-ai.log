@@ -1,0 +1,86 @@
+2024-11-22T08:14:23.892Z INFO: Docker daemon started
+2024-11-22T08:14:24.103Z INFO: Loading existing images from local storage
+2024-11-22T08:14:25.317Z INFO: Pulling image nginx:latest from docker hub
+2024-11-22T08:14:25.892Z INFO: Layer sha256:a2abf6c4d29d:1 already exists
+2024-11-22T08:14:26.103Z INFO: Layer sha256:f1db227348d:2 already exists
+2024-11-22T08:14:26.445Z INFO: Layer sha256:b4ad5955945:3 downloading
+2024-11-22T08:14:28.671Z INFO: Pull complete for nginx:latest
+2024-11-22T08:14:29.012Z INFO: Creating container nginx_web_1 from nginx:latest
+2024-11-22T08:14:29.234Z INFO: Container nginx_web_1 created with ID abc123def456
+2024-11-22T08:14:29.445Z INFO: Starting container nginx_web_1
+2024-11-22T08:14:29.892Z INFO: Container nginx_web_1 started successfully
+
+2024-11-22T08:15:02.103Z INFO: Pulling image postgres:13 from docker hub
+2024-11-22T08:15:02.445Z INFO: Layer sha256:c4ff3fc9d72:1 downloading
+2024-11-22T08:15:03.892Z INFO: Layer sha256:d3a87c1d567:2 downloading
+2024-11-22T08:15:05.103Z INFO: Layer sha256:a9b34def892:3 downloading
+2024-11-22T08:15:07.445Z INFO: Pull complete for postgres:13
+2024-11-22T08:15:07.892Z INFO: Creating container postgres_db_1 from postgres:13
+2024-11-22T08:15:08.103Z INFO: Container postgres_db_1 created with ID def456ghi789
+2024-11-22T08:15:08.445Z INFO: Starting container postgres_db_1
+2024-11-22T08:15:09.892Z INFO: Container postgres_db_1 started successfully
+
+2024-11-22T08:16:23.103Z WARN: Container nginx_web_1 high memory usage detected (85%)
+2024-11-22T08:16:24.445Z INFO: Attempting to restart container nginx_web_1
+2024-11-22T08:16:24.892Z INFO: Container nginx_web_1 stopped
+2024-11-22T08:16:25.103Z INFO: Container nginx_web_1 started
+
+2024-11-22T08:17:02.445Z INFO: Building image custom_app:1.0
+2024-11-22T08:17:02.892Z INFO: Step 1/8: FROM node:16-alpine
+2024-11-22T08:17:03.103Z INFO: Step 2/8: WORKDIR /app
+2024-11-22T08:17:03.445Z INFO: Step 3/8: COPY package*.json ./
+2024-11-22T08:17:03.892Z INFO: Step 4/8: RUN npm install
+2024-11-22T08:17:15.103Z INFO: Step 5/8: COPY . .
+2024-11-22T08:17:15.445Z INFO: Step 6/8: EXPOSE 3000
+2024-11-22T08:17:15.892Z INFO: Step 7/8: CMD ["npm", "start"]
+2024-11-22T08:17:16.103Z INFO: Successfully built custom_app:1.0
+
+2024-11-22T08:18:02.445Z INFO: Creating network "myapp_network"
+2024-11-22T08:18:02.892Z INFO: Network myapp_network created with ID network123abc
+
+2024-11-22T08:19:23.103Z INFO: Creating volume "postgres_data"
+2024-11-22T08:19:23.445Z INFO: Volume postgres_data created successfully
+
+2024-11-22T08:20:02.892Z INFO: Starting container cleanup process
+2024-11-22T08:20:03.103Z INFO: Found 3 stopped containers
+2024-11-22T08:20:03.445Z INFO: Removing container test_container_1 (ID: test123abc)
+2024-11-22T08:20:03.892Z INFO: Removing container test_container_2 (ID: test456def)
+2024-11-22T08:20:04.103Z INFO: Removing container test_container_3 (ID: test789ghi)
+2024-11-22T08:20:04.445Z INFO: Cleanup complete
+
+2024-11-22T08:21:02.892Z INFO: Starting image prune process
+2024-11-22T08:21:03.103Z INFO: Found 5 dangling images
+2024-11-22T08:21:03.445Z INFO: Removing image sha256:unused123abc
+2024-11-22T08:21:03.892Z INFO: Removing image sha256:unused456def
+2024-11-22T08:21:04.103Z INFO: Removing image sha256:unused789ghi
+2024-11-22T08:21:04.445Z INFO: Removing image sha256:unused012jkl
+2024-11-22T08:21:04.892Z INFO: Removing image sha256:unused345mno
+2024-11-22T08:21:05.103Z INFO: Reclaimed 1.2GB of disk space
+
+2024-11-22T08:22:23.445Z INFO: Volume prune initiated
+2024-11-22T08:22:23.892Z INFO: Found 2 unused volumes
+2024-11-22T08:22:24.103Z INFO: Removing volume old_data_1
+2024-11-22T08:22:24.445Z INFO: Removing volume old_data_2
+2024-11-22T08:22:24.892Z INFO: Reclaimed 500MB of disk space
+
+2024-11-22T08:23:02.103Z WARN: Container postgres_db_1 high CPU usage detected (92%)
+2024-11-22T08:23:02.445Z INFO: Container health check failed for postgres_db_1
+2024-11-22T08:23:02.892Z INFO: Attempting container recovery
+2024-11-22T08:23:03.103Z INFO: Container postgres_db_1 stopped
+2024-11-22T08:23:03.445Z INFO: Container postgres_db_1 started with recovery options
+
+2024-11-22T08:24:23.892Z INFO: Network prune initiated
+2024-11-22T08:24:24.103Z INFO: Found 1 unused network
+2024-11-22T08:24:24.445Z INFO: Removing network old_network_1
+2024-11-22T08:24:24.892Z INFO: Network prune complete
+
+2024-11-22T08:25:02.103Z INFO: System prune initiated
+2024-11-22T08:25:02.445Z INFO: Removing all unused containers
+2024-11-22T08:25:02.892Z INFO: Removing all unused networks
+2024-11-22T08:25:03.103Z INFO: Removing all unused images
+2024-11-22T08:25:03.445Z INFO: Removing all unused volumes
+2024-11-22T08:25:03.892Z INFO: Total reclaimed space: 3.7GB
+
+2024-11-22T08:26:23.103Z INFO: Container nginx_web_1 stopped
+2024-11-22T08:26:23.445Z INFO: Container postgres_db_1 stopped
+2024-11-22T08:26:23.892Z INFO: Docker daemon shutting down
